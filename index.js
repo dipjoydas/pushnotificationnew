@@ -10,7 +10,7 @@ app.use(express.json())
 
 app.use(cors())
 
-const url= process.env.MONGODB_URI
+const url= process.env.MONGODB_URI  
 console.log(url)
 
 
