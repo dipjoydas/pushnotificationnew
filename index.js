@@ -9,6 +9,10 @@ const { MongoClient } = require("mongodb");
 app.use(express.json())
 
 app.use(cors())
+var corsOptions = {
+    origin: 'https://lucky-cranachan-eecb4c.netlify.app/',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
 
 const url= process.env.MONGODB_URI  
 const client = new MongoClient(url);
@@ -29,7 +33,7 @@ webPush.setVapidDetails(
  })
 
 //  subscribe user =========================================================================
-app.post('/subscribe',(req,res)=>{
+app.post('/subscribe',cors(corsOptions),(req,res)=>{
 async function run() {
     try {
         await client.connect();
