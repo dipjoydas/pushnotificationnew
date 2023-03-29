@@ -38,7 +38,7 @@ async function run() {
         const haiku = database.collection("subscription");
         const result = await haiku.insertOne(req.body);
         console.log("Connected correctly to server");
-        res.send(json.stringify(result))
+        res.send(JSON.stringify(result))
     } catch (err) {
         console.log(err.stack);
         res.send({"body":"cant store"})
