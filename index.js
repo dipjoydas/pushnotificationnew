@@ -8,7 +8,7 @@ const { MongoClient } = require("mongodb");
 // s
 app.use(express.json())
 
-app.use(cors())
+// app.use(cors())
 var corsOptions = {
     origin: 'https://lucky-cranachan-eecb4c.netlify.app/',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
